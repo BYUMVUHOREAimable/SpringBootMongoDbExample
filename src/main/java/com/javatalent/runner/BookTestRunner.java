@@ -29,10 +29,13 @@ public class BookTestRunner implements CommandLineRunner {
             new Book(104, "MongoDB", "Shakuntala Gupta", 1500.00)
         ));
 
-        System.out.println("Data Saved to MongoDB Successfully!");
+        //System.out.println("Data Saved to MongoDB Successfully!");
 
         // Update ID(PK) manually (It is allowed): It will create one new record!
         bookRepository.save(new Book(104, "MongoDB", "Gupta", 964.50));
+        
+        //Inserting the record using insert method
+        bookRepository.insert(new Book(501,"Microservices","Ak Boss",1020.20));
 
         // Printing all books to the console
         List<Book> bookList = bookRepository.findAll();
